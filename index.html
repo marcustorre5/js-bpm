@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Descobrir o BPM de uma música usando Javascript</title>
+	    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	    	<meta name="description" content="Demonstração de um algoritmo para calcular o tempo de uma faixa usando a API de áudio, usando a API da Web do Spotify para pesquisar músicas.">
+	    	<meta name="twitter:card" content="resumo">
+	    	<meta name="twitter:title" content="Descobrir o BPM de uma música em um navegador">
+	    	<meta name="twitter:description" content="Demonstração de um algoritmo para calcular o tempo de uma faixa usando a API de áudio, usando a API da Web do Spotify para pesquisar músicas.">
+	</head>
+	<body>
+		<style>
+			body{
+				background-color: black;
+				color: grey;
+			}
+		</style>
+		<script type="text/javascript">
+    	var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-39254352-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://www.google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()
+    	</script>
+		<h1>Calculando BPM usando Javascript e a API da Web Spotify</h1>
+		<p>Esta demonstração usa o navegador <strong>Audio API</strong> para determinar o andamento de uma música, processando um trecho de 30 segundos de uma música.</p>
+		<form>
+			<input type="text" id="query" placeholder="Digite o nome de uma faixa (por exemplo: guns n roses - sweet o mine)">
+			<input type="submit" value="Faixa de pesquisa &amp; Calcular o tempo">
+		</form>
+
+		<div id="result">
+			<div id="text"></div>
+			<div>
+				<svg width="100%" height="40" id="svg"></svg>
+				<button id="play">Play track</button>
+			</div>
+
+			<audio id="audio"></audio>
+		</div>
+
+		<p>Como funciona:</p>
+		<ol>
+			<li>Procure a faixa em <a href="https://developer.spotify.com/web-api/search-item/">Spotify using their Web API</a></li>
+			<li>Use o MP3 de visualização dos anos 30 como fonte para a API de áudio</li>
+			<li>Aplicar um filtro de graves</li>
+			<li>Encontre picos</li>
+			<li>Intervalos de contagem entre picos</li>
+			<li>Agrupe-os</li>
+		</ol>
+		<footer class="about">
+			<h3>About me</h3>
+			<div class="media">
+				<div class="bd">
+					<div class="name">Marcus Torres</div>
+					<a href="https://github.com/marcustorre5">My GitHub</a>
+				</div>
+			</div>
+		</footer>
+		<script src="spotify-web-api.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
